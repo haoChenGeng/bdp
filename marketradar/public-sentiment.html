@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link href="../css/common.css" rel="stylesheet" />
+		<link href="../css/marketradar.css" rel="stylesheet" />
+		
+	</head>
+
+	<body>
+		<header id="header" class="mui-bar mui-bar-nav me-header">
+			<h1 class="mui-title">小牛分析</h1>
+			<button class="mui-action-back  mui-btn-link ">
+				<span class="mui-icon mui-icon-left-nav"></span>返回
+			</button>
+		</header>
+		<nav class="mui-bar mui-bar-tab">
+			<a class="mui-tab-item-nav" href="../index.html">
+				<span class="mui-tab-label">业绩概览</span>
+			</a>
+			<a class="mui-tab-item-nav" href="../operate/zx-operate.html">
+				<span class="mui-tab-label">运营详情</span>
+			</a>
+			<a class="mui-tab-item-nav" href="javascript：void(0)">
+				<span class="mui-tab-label" style="color: #007AFF;">市场雷达</span>
+			</a>
+		</nav>
+		<div class="mui-content" style="background: #fff;">
+			<div class="a-tab-graffer">
+				<a class="a-tab-item active" href="javascript:void(0)">舆情</a>
+				<a class="a-tab-item" href="record.html">数据</a>
+				<a class="a-tab-item" href="intelligence.html">情报</a>
+				<a class="a-tab-item" href="research-report.html">研报</a>
+			</div>
+			<div class="mui-control-content mui-active">
+				<div class="me-nav-wrapper">
+					<a href="javascript:void(0)" class="me-nav-item arrow-active">
+						小牛集团
+						<span class="arrowtop">
+							<i class="top-arrow1"></i>
+							<i class="top-arrow2"></i
+						</span>
+					</a>
+					<a href="javascript:void(0)" class="me-nav-item">在线</a>
+					<a href="javascript:void(0)" class="me-nav-item">新财富</a>
+					<a href="javascript:void(0)" class="me-nav-item">普惠</a>
+					<!-- <a href="javascript:void(0)" class="me-nav-item">分期</a> -->
+				</div>
+				<div class="report-wrapper border-1px">
+					<div class="tableTitle">舆情指数</div>
+					<div class="ps-index" id="psindexTable"></div>
+				</div>
+				<div class="report-wrapper border-1px">
+					<div class="tableTitle">媒体报道</div>
+					<ul class="mui-table-view csfinance-list" id="csfinanceList">
+					    <!--<li class="mui-table-view-cell csfinance-list-item">
+					    	<span class="me-icon roll"></span>
+					    	<span class="csfinance-txt">小牛金服明年上线小牛金服明年上线小牛金服明年上线小牛金服明年上线小牛金服明年上线小牛金服明年上线</span>
+					    </li><li class="mui-table-view-cell csfinance-list-item">
+					    	<span class="me-icon roll"></span>
+					    	<span class="csfinance-txt">小牛金服明年上线小牛金服明年上线</span>
+					    </li>
+					    <li class="mui-table-view-cell csfinance-list-item">
+					    	<span class="me-icon roll"></span>
+					    	<span class="csfinance-txt">小牛金服明年上线小牛金服明年上线小牛金服明年上线</span>
+					    </li>-->
+					</ul>
+				</div>
+				<div class="data-wrapper border-1px">
+					<div class="tableTitle">用户关注</div>
+					<div class="user-atten" id="userAttenTable"></div>
+					<ul class="conduct-list me-ul">
+						<li class="conduct-list-item me-ul-li">
+							<span class="title">热点1：</span>
+							<span class="info">小牛金服集团小牛金服集团小牛金服集团</span>
+						</li>
+						<li class="conduct-list-item me-ul-li">
+							<span class="title">热点2：</span>
+							<span class="info">小牛金服集团小牛金服集团小牛金服集团</span>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<script src="../js/jquery-3.1.1.min.js"></script>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/options.js"></script>
+		<script src="../js/echarts.js"></script>
+		<script src="public-sentiment.js"></script>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+	</body>
+
+</html>

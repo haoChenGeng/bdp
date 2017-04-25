@@ -1,0 +1,312 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link href="../css/common.css" rel="stylesheet" />
+		<link href="../css/app.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="../css/mui.picker.min.css"/>    
+	</head>
+	<body>
+		<header id="header" class="mui-bar mui-bar-nav me-header">
+			<h1 class="mui-title">小牛分析</h1>
+			<button class="mui-action-back  mui-btn-link ">
+				<span class="mui-icon mui-icon-left-nav"></span>返回
+			</button>
+		</header>
+		<nav class="mui-bar mui-bar-tab">
+			<a class="mui-tab-item-nav " href="../index.html">
+				<span class="mui-tab-label">业绩概览</span>
+			</a>
+			<a class="mui-tab-item-nav" href="javascript：void(0)">
+				<span class="mui-tab-label" style="color: #007AFF;">运营详情</span>
+			</a>
+			<a class="mui-tab-item-nav" href="../marketradar/public-sentiment.html">
+				<span class="mui-tab-label">市场雷达</span>
+			</a>
+		</nav>
+		<div class="mui-content">
+			<button data-options='{"type":"date","beginYear":2012,"endYear":2020}' class="btn mui-btn mui-btn-block" style="padding: 5px;"><i class="iconfont" style="color:#587CC6;margin-right: 5px;font-size: 20px;vertical-align: -2px;">&#xe602;</i>日期选择：<span id="dtBtn"></span> <span class="mui-icon mui-icon-arrowdown"></span></button>
+			<div class="a-tab-graffer">
+				<a class="a-tab-item active" href="javascript:void(0)">在线</a>
+				<a class="a-tab-item" href="../generalView/xcf-general.html">新财富</a>
+				<a class="a-tab-item" href="ph-operate.html">普惠</a>
+				<!-- <a class="a-tab-item" href="fq-operate.html">分期</a> -->
+			</div>
+			<div>
+				<div id="zx" class="mui-control-content  mui-active">
+					<div class="zx-column-wrapper">
+						<ul class="mui-table-view">
+						    <li class="mui-table-view-cell">
+						    	<span class="me-icon back_cj"></span>成交
+						        <span class="mui-badge me-badge" id="cjnum"></span>
+						    </li>
+						    <li class="mui-table-view-cell">
+						    	<span class="me-icon back_jrz"></span>净流入
+						        <span class="mui-badge me-badge" id="jlrnum"></span>
+						    </li>
+						    <li class="mui-table-view-cell">
+						    	<span class="me-icon back_ccz"></span>充提差
+						        <span class="mui-badge me-badge" id="ctcnum"></span>
+						    </li>
+						    <li class="mui-table-view-cell">
+						    	<span class="me-icon back_ds"></span>待还
+						        <span class="mui-badge me-badge" id="dsnum"></span>
+						    </li>
+						    <li class="mui-table-view-cell noborder">
+						    	<span class="me-icon back_xk"></span>新客
+						        <span class="mui-badge me-badge" id="xknum"></span>
+						    </li>
+						</ul>
+					</div>
+					<div class="news-wrapper mui-row">
+						<div class="mui-col-sm-6 mui-col-xs-6 xcf-warning">
+							<div class="me-title-2">
+				    		<span><i class="iconfont" style="color:#587CC6;margin-right: 5px;vertical-align: -2px">&#xe68e;</i>预警</span>
+				    	</div>
+				    	<div class="mqWrap">
+    						<div id="marqueeWarn" class="marquee">
+    							
+    						</div>
+    					</div>
+						</div>
+						<div class="mui-col-sm-6 mui-col-xs-6 xcf-hight">
+							<div class="me-title-2">
+				    		<span><i class="iconfont" style="color:#587CC6;margin-right: 5px;vertical-align: -2px;">&#xe65c;</i>亮点</span>
+				    	</div>
+				    	<div style="overflow: hidden;height: 21px;">
+    						<div class="marquee" id="marqueeSpot" >
+    												
+    						</div>
+    					</div>
+						</div>
+						<div class="mui-col-sm-12 mui-col-xs-12 xcf-edit">
+							<div class="me-title-2" id="writeComment">
+				    		<span><i class="iconfont" style="color:#587CC6;margin-right: 5px;font-size: 20px;">&#xe601;</i>编辑备注</span>
+				    		<!-- <span class="xcf-edit-date" id="markLeader">xx总裁（今日10:10）</span> -->
+				    	</div>
+				    	<div class="mqWrap">
+                <div id="marqueeMark" class="marquee" style="overflow: hidden;">
+                  
+                </div>
+              </div>
+						</div>
+					</div>
+					<div class="chart-wrapper">
+						<div class="mui-segmented-control mui-segmented-control-positive">
+							<a class="mui-control-item mui-active" href="#operate">运营</a>
+							<a class="mui-control-item" href="#members" >用户</a>
+							<a class="mui-control-item" href="#fundfeel">资金与舆情</a>
+						</div>
+						<div id="operate" class="mui-control-content mui-active">
+							<div class="date-tab">
+								<div id="" class="mui-segmented-control mui-segmented-control-primary">
+									<a class="mui-control-item mui-active" href="#zxoperateDay">日</a>
+									<a class="mui-control-item">周</a>
+									<a class="mui-control-item" href="#zxoperateMoon" id="month">月</a>
+								</div>
+							</div>
+							<div id="zxoperateDay" class="mui-control-content mui-active">
+								<div class="zxoperate-day-chart">
+									<div class="tableTitle">年化系数</div>
+									<div class="year-ratio-table" id="yearratioTable"></div>
+
+									<div class="tableTitle">回款</div>
+									<div class="back-fund-table" id="backfundTable" style="margin-bottom: 10px;"></div>
+								
+                  <div class="mui-segmented-control mui-segmented-control-positive">
+                    <div class="me-segmented-control">
+                      <a class="mui-control-item me-control-item mui-active" href="#total">总计</a>
+                      <a class="mui-control-item me-control-item" href="#dayday">天天牛</a>
+                      <a class="mui-control-item me-control-item" href="#moons">月月牛</a>
+                      <a class="mui-control-item me-control-item" href="#ftot">1-3个月</a>
+                    </div>
+                    <div class="me-segmented-control">
+                      <a class="mui-control-item me-control-item" href="#ttos">3-6个月</a>
+                      <a class="mui-control-item me-control-item" href="#ston">6-9个月</a>
+                      <a class="mui-control-item me-control-item" href="#ntot">9-12个月</a>
+                      <a class="mui-control-item me-control-item" href="#moret">12个月以上</a>
+                    </div>
+                  </div>
+                  <div class="mui-control-content mui-active " id="total">
+  									<div class="tableTitle">待还</div>
+  									<div class="wait-back-table" id="totalChart"></div>
+                  </div>
+                  <div class="mui-control-content" id="dayday">
+                    <div class="tableTitle">待还</div>
+                    <div class="wait-back-table" id="daydayChart"></div>
+                  </div>
+                  <div class="mui-control-content" id="moons">
+                    <div class="tableTitle">待还</div>
+                    <div class="wait-back-table" id="moonsChart"></div>
+                  </div>
+                  <div class="mui-control-content" id="ftot">
+                    <div class="tableTitle">待还</div>
+                    <div class="wait-back-table" id="ftotChart"></div>
+                  </div>
+                  <div class="mui-control-content" id="ttos">
+                    <div class="tableTitle">待还</div>
+                    <div class="wait-back-table" id="ttosChart"></div>
+                  </div>
+                  <div class="mui-control-content" id="ston">
+                    <div class="tableTitle">待还</div>
+                    <div class="wait-back-table" id="stonChart"></div>
+                  </div>
+                  <div class="mui-control-content" id="ntot">
+                    <div class="tableTitle">待还</div>
+                    <div class="wait-back-table" id="ntotChart"></div>
+                  </div>
+                  <div class="mui-control-content" id="moret">
+                    <div class="tableTitle">待还</div>
+                    <div class="wait-back-table" id="moretChart"></div>
+                  </div>
+                  
+								</div>
+							</div>
+							<div id="zxoperateWeek" class="mui-control-content">2</div>
+							<div id="zxoperateMoon" class="mui-control-content">
+								<div class="nhxsMon tableTitle">年化系数</div>
+								<div id="nhxsMon"></div>
+
+								<div class="tableTitle">回款</div>
+								<div id="hkMon"></div>
+
+								<div class="mui-segmented-control mui-segmented-control-positive">
+                  <div class="me-segmented-control">
+                    <a class="mui-control-item me-control-item mui-active" href="#totalMon">总计</a>
+                    <a class="mui-control-item me-control-item" href="#daydayMon">天天牛</a>
+                    <a class="mui-control-item me-control-item" href="#moonsMon">月月牛</a>
+                    <a class="mui-control-item me-control-item" href="#ftotMon">1-3个月</a>
+                  </div>
+                  <div class="me-segmented-control">
+                    <a class="mui-control-item me-control-item" href="#ttosMon">3-6个月</a>
+                    <a class="mui-control-item me-control-item" href="#stonMon">6-9个月</a>
+                    <a class="mui-control-item me-control-item" href="#ntotMon">9-12个月</a>
+                    <a class="mui-control-item me-control-item" href="#moretMon">12个月以上</a>
+                  </div>
+                </div>
+                <div class="mui-control-content mui-active " id="totalMon">
+                  <div class="tableTitle">待还</div>
+                  <div class="wait-back-table" id="totalChartMon"></div>
+                </div>
+                <div class="mui-control-content" id="daydayMon">
+                  <div class="tableTitle">待还</div>
+                  <div class="wait-back-table" id="daydayChartMon"></div>
+                </div>
+                <div class="mui-control-content" id="moonsMon">
+                  <div class="tableTitle">待还</div>
+                  <div class="wait-back-table" id="moonsChartMon"></div>
+                </div>
+                <div class="mui-control-content" id="ftotMon">
+                  <div class="tableTitle">待还</div>
+                  <div class="wait-back-table" id="ftotChartMon"></div>
+                </div>
+                <div class="mui-control-content" id="ttosMon">
+                  <div class="tableTitle">待还</div>
+                  <div class="wait-back-table" id="ttosChartMon"></div>
+                </div>
+                <div class="mui-control-content" id="stonMon">
+                  <div class="tableTitle">待还</div>
+                  <div class="wait-back-table" id="stonChartMon"></div>
+                </div>
+                <div class="mui-control-content" id="ntotMon">
+                  <div class="tableTitle">待还</div>
+                  <div class="wait-back-table" id="ntotChartMon"></div>
+                </div>
+                <div class="mui-control-content" id="moretMon">
+                  <div class="tableTitle">待还</div>
+                  <div class="wait-back-table" id="moretChartMon"></div>
+                </div>
+							</div>							
+						</div>
+						<div id="members" class="mui-control-content">
+							<div class="date-tab">
+								<div class="mui-segmented-control mui-segmented-control-primary">
+									<a class="mui-control-item mui-active" href="#userDay">日</a>
+									<a class="mui-control-item">周</a>
+									<a class="mui-control-item" href="#zxUserMon" id="monthUser">月</a>
+								</div>
+							</div>
+							<div id="userDay" class="mui-control-content  mui-active">
+								<div class="zxoperate-day-chart">
+									<div class="tableTitle">新增注册及转化</div>
+									<div class="chartWrap" id="xinzeng"></div>
+
+									<div class="tableTitle">人均投资金额</div>
+									<div class="chartWrap" id="rjtzDay"></div>
+								
+									<div class="tableTitle">当日客户质量分析</div>
+									<div class="chartWrap" id="khzlDay"></div>
+
+									<div class="tableTitle">用户投资时间分布</div>
+									<div class="chartWrap" id="tzsjDay"></div>
+
+									<div class="tableTitle">成交客户渠道来源</div>
+									<div class="chartWrap" id="qdlyDay"></div>
+
+									<div class="tableTitle">渠道转化趋势</div>
+									<div class="chartWrap" id="qdzhDay"></div>
+
+									<div class="tableTitle">未投资客户分析</div>
+									<div class="chartWrap" id="wtzDay"></div>
+								</div>
+							</div>
+							<div id="zxUserMon" class="mui-control-content">
+								<div class="zxoperate-day-chart">
+									<div class="tableTitle">新增注册及转化1</div>
+									<div class="chartWrap" id="xinzengMon"></div>
+
+									<div class="tableTitle">人均投资金额</div>
+									<div class="chartWrap" id="rjtzMon"></div>
+								
+									<div class="tableTitle">当日客户质量分析</div>
+									<div class="chartWrap" id="khzlMon"></div>
+
+									<div class="tableTitle">用户投资时间分布</div>
+									<div class="chartWrap" id="tzsjMon"></div>
+
+									<div class="tableTitle">成交客户渠道来源</div>
+									<div class="chartWrap" id="qdlyMon"></div>
+
+									<div class="tableTitle">渠道转化趋势</div>
+									<div class="chartWrap" id="qdzhMon"></div>
+
+									<div class="tableTitle">未投资客户分析</div>
+									<div class="chartWrap" id="wtzMon"></div>
+								</div>
+							</div>							
+						</div>
+						<div id="fundfeel" class="mui-control-content">
+							<div class="date-tab">
+								<div id="" class="mui-segmented-control mui-segmented-control-primary">
+									<a class="mui-control-item mui-active" href="#fundfeelDay">日</a>
+									<a class="mui-control-item">周</a>
+									<a class="mui-control-item" href="#zxFundfeelMon" id="fundfeelMon">月</a>
+								</div>
+							</div>
+							<div id="fundfeelDay" class="mui-control-content  mui-active">
+								<div class="tableTitle">资金充提</div>
+								<div class="chartWrap" id="zjctDay"></div>
+							</div>
+							<div id="zxFundfeelMon" class="mui-control-content">
+								<div class="tableTitle">资金充提</div>
+								<div class="chartWrap" id="zjctMon"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="underline"></div>
+  <span id="loading" class="mui-spinner" style="display: none;position: fixed;top:50%;left: 50%;"></span>
+      
+		</div>
+		<script src="../js/mui.min.js"></script>
+    <script src="../js/mui.picker.min.js"></script>
+		<script src="../js/echarts.js"></script>
+		<script src="../js/jquery-3.1.1.min.js"></script>
+		<script src="../js/options.js"></script>
+		<script src="zx-operate.js"></script>
+	</body>
+</html>

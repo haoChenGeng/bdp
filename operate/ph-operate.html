@@ -1,0 +1,229 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link href="../css/common.css" rel="stylesheet" />
+		<link href="../css/app.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="../css/mui.picker.min.css"/>
+
+	</head>
+	<body>
+		<header id="header" class="mui-bar mui-bar-nav me-header">
+			<h1 class="mui-title">小牛分析</h1>
+			<button class="mui-action-back  mui-btn-link ">
+				<span class="mui-icon mui-icon-left-nav"></span>返回
+			</button>
+		</header>
+		<nav class="mui-bar mui-bar-tab">
+			<a class="mui-tab-item-nav " href="../index.html">
+				<span class="mui-tab-label">业绩概览</span>
+			</a>
+			<a class="mui-tab-item-nav" href="javascript：void(0)">
+				<span class="mui-tab-label" style="color: #007AFF;">运营详情</span>
+			</a>
+			<a class="mui-tab-item-nav" href="../marketradar/public-sentiment.html">
+				<span class="mui-tab-label">市场雷达</span>
+			</a>
+		</nav>
+		<div class="mui-content">
+			<button data-options='{"type":"date","beginYear":2012,"endYear":2020}' class="btn mui-btn mui-btn-block" style="padding:5px;"><i class="iconfont" style="color:#587CC6;margin-right: 5px;font-size: 20px;vertical-align: -2px;">&#xe602;</i>日期选择：<span id="dtBtn"></span> <span class="mui-icon mui-icon-arrowdown"></span></button>
+			<div class="a-tab-graffer">
+				<a class="a-tab-item" href="zx-operate.html">在线</a>
+				<a class="a-tab-item" href="../generalView/xcf-general.html">新财富</a>
+				<a class="a-tab-item active" href="javascript:void(0)">普惠</a>
+				<!-- <a class="a-tab-item " href="fq-operate.html">分期</a> -->
+			</div>
+			<div>
+				<div id="fq" class="mui-control-content mui-active">
+					<div class="fq-list-total">
+						<div class="fq-list-itleft">
+							<ul class="fq-list-ul">
+								<li class="fq-list-li">
+									<span>审批通过率</span>
+									<span id="sptgl"></span>
+								</li>
+								<li class="fq-list-li">
+									<span>审批金额</span>
+									<span id="spje"></span>
+								</li>
+								<li class="fq-list-li">
+									<span>件均金额</span>
+									<span id="jjje"></span>
+								</li>
+								<li class="fq-list-li">
+									<span>进单量</span>
+									<span id="jdl"></span>
+								</li>
+							</ul>
+						</div>
+						<div class="fq-list-itmid">
+							<span class="roll"></span>
+							<div class="line"></div>
+							<span class="roll"></span>
+						</div>
+						<div class="fq-list-itright">
+							<ul class="fq-list-ul">
+								<li class="fq-list-li">
+									<span>逾期金额</span>
+									<span id="yqje"></span>
+								</li>
+								<li class="fq-list-li">
+									<span>逾期率</span>
+									<span id="yql"></span>
+								</li>
+								<li class="fq-list-li">
+									<span>累计放款</span>
+									<span id="ljfk"></span>
+								</li>
+								<li class="fq-list-li">
+									<span>待收余额</span>
+									<span id="dsje"></span>
+								</li>
+							</ul>
+						</div>
+						
+					</div>
+					<div class="news-wrapper mui-row">
+						<div class="mui-col-sm-6 mui-col-xs-6 xcf-warning">
+							<div class="me-title-2">
+				    		<span><i class="iconfont" style="color:#587CC6;margin-right: 5px;vertical-align: -2px">&#xe68e;</i>预警</span>
+				    	</div>
+				    	<div class="mqWrap">
+				    		<div id="marqueeWarn" class="marquee">
+				    		</div>
+				    	</div>
+						</div>
+						<div class="mui-col-sm-6 mui-col-xs-6 xcf-hight">
+							<div class="me-title-2">
+				    		<span><i class="iconfont" style="color:#587CC6;margin-right: 5px;vertical-align: -2px;">&#xe65c;</i>亮点</span>
+				    	</div>
+				    	<div class="mqWrap">
+				    		<div class="marquee" id="marqueeSpot" >
+				    		</div>
+				    	</div>
+						</div>
+						<div class="mui-col-sm-12 mui-col-xs-12 xcf-edit">
+							<div class="me-title-2" id="writeComment">
+				    		<span><i class="iconfont" style="color:#587CC6;margin-right: 5px;font-size: 20px;">&#xe601;</i>编辑备注</span>
+				    	</div>
+				    	<div class="mqWrap">
+				    		<div id="marqueeMark" class="marquee">
+				    		</div>
+				    	</div>
+						</div>
+					</div>
+					<div class="chart-wrapper">
+						<div class="mui-segmented-control mui-segmented-control-positive">
+							<a class="mui-control-item mui-active" href="#loadType">贷中</a>
+							<a class="mui-control-item" href="#loadAfter">贷后</a>
+							<a class="mui-control-item" href="#phProduct">产品</a>
+						</div>
+						<div id="loadType" class="mui-control-content mui-active">
+							<div class="date-tab">
+								<div id="" class="mui-segmented-control mui-segmented-control-primary">
+									<a class="mui-control-item mui-active" href="#phOperateDay">日</a>
+									<a class="mui-control-item">周</a>
+									<a class="mui-control-item" href="#phOperateMoon">月</a>
+								</div>
+							</div>
+							<div id="phOperateDay" class="mui-control-content  mui-active">
+								<div class="fqoperate-day-chart">
+									<div class="tableTitle">批核金额</div>
+									<div class="batch-fund-table fqoperate-echarts" id="batchfundTableDay"></div>
+								
+									<div class="tableTitle">审批通过率</div>
+									<div class="approval-pass-table fqoperate-echarts" id="approvalpassTableDay"></div>
+								
+									<div class="tableTitle">进单审批</div>
+									<div class="list-pass-table fqoperate-echarts" id="listpassTableDay"></div>
+								</div>
+							</div>
+							<div id="phOperateMoon" class="mui-control-content">
+								<div class="fqoperate-day-chart">
+									<div class="tableTitle">批核金额</div>
+									<div class="batch-fund-table fqoperate-echarts" id="batchfundTableMon"></div>
+									
+									<div class="tableTitle">审批通过率</div>
+									<div class="approval-pass-table fqoperate-echarts" id="approvalpassTableMon"></div>
+								
+									<div class="tableTitle">进单审批</div>
+									<div class="list-pass-table fqoperate-echarts" id="listpassTableMon"></div>
+								</div>
+							</div>
+						</div>
+						<div id="loadAfter" class="mui-control-content">
+							<div class="date-tab">
+								<div id="" class="mui-segmented-control mui-segmented-control-primary">
+									<a class="mui-control-item mui-active" href="#loadAfterDay">日</a>
+									<a class="mui-control-item">周</a>
+									<a class="mui-control-item" href="#loadAfterMon">月</a>
+								</div>
+							</div>
+							<div id="loadAfterDay" class="mui-control-content  mui-active">
+								<div class="tableTitle">待收/逾期</div>
+								<div id="dsyqDay"></div>
+
+								<div class="tableTitle">逾期率</div>
+								<div id="yqlDay"></div>
+
+								<div class="tableTitle">逾期结构</div>
+								<div id="yqjgDay"></div>
+
+								<div class="tableTitle">账龄迁移</div>
+								<div id="zlqyDay"></div>
+							</div>
+							<div id="loadAfterMon" class="mui-control-content">
+								<div class="tableTitle">待收/逾期</div>
+								<div id="dsyqMon"></div>
+
+								<div class="tableTitle">逾期率</div>
+								<div id="yqlMon"></div>
+
+								<div class="tableTitle">逾期结构</div>
+								<div id="yqjgMon"></div>
+
+								<div class="tableTitle">账龄迁移</div>
+								<div id="zlqyMon"></div>
+							</div>							
+						</div>
+						<div id="phProduct" class="mui-control-content">
+							<div class="date-tab">
+								<div id="" class="mui-segmented-control mui-segmented-control-primary">
+									<a class="mui-control-item mui-active" href="#phProductDay">日</a>
+									<a class="mui-control-item">周</a>
+									<a class="mui-control-item" href="#phProductMon">月</a>
+								</div>								
+							</div>
+							<div id="phProductDay" class="mui-control-content  mui-active">
+								<div class="tableTitle">金融结构</div>
+								<div id="jrjgDay"></div>
+
+								<div class="tableTitle">审批与逾期</div>
+								<div id="spyqDay"></div>								
+							</div>
+							<div id="phProductMon" class="mui-control-content">
+								<div class="tableTitle">金融结构</div>
+								<div id="jrjgMon"></div>
+
+								<div class="tableTitle">审批与逾期</div>
+								<div id="spyqMon"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="underline"></div>
+		</div>
+	<span id="loading" class="mui-spinner" style="display: none;position: fixed;top:50%;left: 50%;"></span>
+		
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/mui.picker.min.js"></script>		
+		<script src="../js/echarts.js"></script>
+		<script src="../js/options.js"></script>
+		<script src="../js/jquery-3.1.1.min.js"></script>
+		<script src="ph-operate.js"></script>
+	</body>
+</html>

@@ -1,0 +1,112 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <link href="../css/mui.min.css" rel="stylesheet" />
+    <link href="../css/common.css" rel="stylesheet" />
+    <link href="../css/app.css" rel="stylesheet" />
+</head>
+
+<body>
+    <header id="header" class="mui-bar mui-bar-nav me-header">
+        <h1 class="mui-title">小牛分析</h1>
+        <button class="mui-action-back  mui-btn-link ">
+            <span class="mui-icon mui-icon-left-nav"></span>返回
+        </button>
+    </header>
+    <div class="mui-content">
+        <div class="tdpicker">
+            <span class="mui-icon mui-icon-chatboxes"></span>
+            <span>日期选择：</span>
+            <span id="result" class="ui-alert">2014-01-01</span>
+            <span class="mui-icon mui-icon-arrowdown"></span>
+        </div>
+        <div class="a-tab-graffer">
+            <a class="a-tab-item active" href="javascript:void(0)">在线</a>
+            <a class="a-tab-item" href="javascript:void(0)">新财富</a>
+            <a class="a-tab-item" href="javascript:void(0)">普惠</a>
+            <a class="a-tab-item" href="javascript:void(0)">分期</a>
+        </div>
+        <div>
+            <div class="mui-control-content  mui-active zx-details-content">
+                <div class="chart-total" id="chartTotal"></div>
+                <div class="mui-row total-number-table">
+                    <div class="mui-col-sm-3 mui-col-xs-3 mui-text-right">昨日：</div>
+                    <div class="mui-col-sm-3 mui-col-xs-2 mui-text-left">
+                        <span>1.75</span>亿
+                    </div>
+                    <div class="mui-col-sm-3 mui-col-xs-4 mui-text-right">七天日均：</div>
+                    <div class="mui-col-sm-3 mui-col-xs-3 mui-text-left">
+                        <span>1.32</span>亿
+                    </div>
+                    <div class="mui-col-sm-3 mui-col-xs-3 mui-text-right">环比：</div>
+                    <div class="mui-col-sm-3 mui-col-xs-2 mui-text-left">
+                        <span>-15</span>%
+                    </div>
+                    <div class="mui-col-sm-3 mui-col-xs-4 mui-text-right">当日七天比：</div>
+                    <div class="mui-col-sm-3 mui-col-xs-3 mui-text-left">
+                        <span>1.32</span>亿
+                    </div>
+                </div>
+                <div class="border-1px"></div>
+                <div class="industry border-1px">
+                    <div class="me-title-2">
+                        <span><i class="iconfont" style="color:#587CC6;margin-right: 5px;vertical-align: 2px;margin-left: 10px;">&#xe73d;</i>业界结构</span>
+                    </div>
+                    <div class="tableTitle">月KPI达成率</div>
+                    <div class="kpiTable" id="kpiTable"></div>
+                </div>
+                <div class="trend border-1px">
+                    <div class="me-title-2">
+                        <span><i class="iconfont" style="color:#587CC6;margin-right: 5px;vertical-align: -2px;margin-left: 10px;">&#xe608;</i>业绩趋势</span>
+                    </div>
+                    <div class="mui-segmented-control mui-segmented-control-positive">
+                        <div class="me-segmented-control">
+                            <a class="mui-control-item me-control-item mui-active" href="#total">总计</a>
+                            <a class="mui-control-item me-control-item" href="#dayday">天天牛</a>
+                            <a class="mui-control-item me-control-item" href="#moons">月月牛</a>
+                            <a class="mui-control-item me-control-item" href="#ftot">1-3个月</a>
+                        </div>
+                        <div class="me-segmented-control">
+                            <a class="mui-control-item me-control-item" href="#ttos">3-6个月</a>
+                            <a class="mui-control-item me-control-item" href="#ston">6-9个月</a>
+                            <a class="mui-control-item me-control-item" href="#ntot">9-12个月</a>
+                            <a class="mui-control-item me-control-item" href="#moret">12个月以上</a>
+                        </div>
+                    </div>
+                    <div class="mui-control-content mui-active" id="total">
+                        <div class="moon-wrapper">
+                            <div class="tableTitle">月成交趋势</div>
+                            <div class="moon-table" id="moonTable"></div>
+                        </div>
+                        <div class="moon-wrapper">
+                            <div class="tableTitle">周成交趋势</div>
+                            <div class="moon-table" id="weekTable"></div>
+                        </div>
+                        <div class="moon-wrapper">
+                            <div class="tableTitle">日成交趋势</div>
+                            <div class="moon-table" id="dayTable"></div>
+                        </div>
+                    </div>
+                    <div class="mui-control-content" id="dayday">天天牛</div>
+                    <div class="mui-control-content" id="moons">月月牛</div>
+                    <div class="mui-control-content" id="ftot">1-3个月</div>
+                    <div class="mui-control-content" id="ttos">3-6个月</div>
+                    <div class="mui-control-content" id="ston">6-9个月</div>
+                    <div class="mui-control-content" id="ntot">9-12个月</div>
+                    <div class="mui-control-content" id="moret">12个月以上</div>
+                </div>
+            </div>
+        </div>
+        <div class="underline"></div>
+    </div>
+    <script src="../js/mui.min.js"></script>
+    <script src="../js/echarts.js"></script>
+    <script src="../js/jquery-3.1.1.min.js"></script>
+    <script src="zx-details.js"></script>
+</body>
+
+</html>

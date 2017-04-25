@@ -1,0 +1,173 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link href="../css/common.css" rel="stylesheet" />
+		<link href="../css/app.css" rel="stylesheet" />
+	</head>
+	<body>
+		<header id="header" class="mui-bar mui-bar-nav me-header">
+			<h1 class="mui-title">小牛分析</h1>
+			<button class="mui-action-back  mui-btn-link ">
+				<span class="mui-icon mui-icon-left-nav"></span>返回
+			</button>
+		</header>
+		<nav class="mui-bar mui-bar-tab">
+			<a class="mui-tab-item-nav " href="../index.html">
+				<span class="mui-tab-label">业绩概览</span>
+			</a>
+			<a class="mui-tab-item-nav" href="javascript：void(0)">
+				<span class="mui-tab-label" style="color: #007AFF;">运营详情</span>
+			</a>
+			<a class="mui-tab-item-nav" href="marketradar/public-sentiment.html">
+				<span class="mui-tab-label">市场雷达</span>
+			</a>
+		</nav>
+		<div class="mui-content">
+			<div class="tdpicker">
+				<span><i class="iconfont" style="color:#587CC6;margin-right: 5px;font-size: 20px;vertical-align: -2px;">&#xe602;</i>日期选择：</span>
+				<span id="result" class="ui-alert">2014-01-01</span>
+				<span class="mui-icon mui-icon-arrowdown"></span>
+			</div>
+			<div class="a-tab-graffer">
+				<a class="a-tab-item" href="zx-operate.html">在线</a>
+				<a class="a-tab-item" href="../generalView/xcf-general.html">新财富</a>
+				<a class="a-tab-item" href="ph-operate.html">普惠</a>
+				<a class="a-tab-item active" href="javascript:void(0)">分期</a>
+			</div>
+			<div>
+				<div id="fq" class="mui-control-content mui-active">
+					<div class="fq-list-total">
+						<div class="fq-list-itleft">
+							<ul class="fq-list-ul">
+								<li class="fq-list-li">
+									<span>审批通过率</span>
+									<span>33%</span>
+								</li>
+								<li class="fq-list-li">
+									<span>审批金额</span>
+									<span>2314566894</span>
+								</li>
+								<li class="fq-list-li">
+									<span>件均金额</span>
+									<span>8329</span>
+								</li>
+								<li class="fq-list-li">
+									<span>进单量</span>
+									<span>3234</span>
+								</li>
+							</ul>
+						</div>
+						<div class="fq-list-itmid">
+							<span class="roll"></span>
+							<div class="line"></div>
+							<span class="roll"></span>
+						</div>
+						<div class="fq-list-itright">
+							<ul class="fq-list-ul">
+								<li class="fq-list-li">
+									<span>预期金额</span>
+									<span>3346556</span>
+								</li>
+								<li class="fq-list-li">
+									<span>逾期率</span>
+									<span>23%</span>
+								</li>
+								<li class="fq-list-li">
+									<span>累计放款</span>
+									<span>8329</span>
+								</li>
+								<li class="fq-list-li">
+									<span>待收余额</span>
+									<span>1243</span>
+								</li>
+							</ul>
+						</div>
+						
+					</div>
+					<div class="news-wrapper mui-row">
+						<div class="mui-col-sm-6 mui-col-xs-6 xcf-warning">
+							<div class="me-title-2">
+				    		<span><i class="iconfont" style="color:#587CC6;margin-right: 5px;vertical-align: -2px">&#xe68e;</i>预警</span>
+				    	</div>
+				    	<div class="mqWrap">
+                <div id="marqueeWarn" class="marquee">
+                  <p>1、新财富，普惠进度低于预期</p>
+                  <p>2、新财富，普惠进度低于预期</p>
+                  <p>3、新财富，普惠进度低于预期</p>
+                </div>
+              </div>
+						</div>
+						<div class="mui-col-sm-6 mui-col-xs-6 xcf-hight">
+							<div class="me-title-2">
+				    		<span><i class="iconfont" style="color:#587CC6;margin-right: 5px;vertical-align: -2px;">&#xe65c;</i>亮点</span>
+				    	</div>
+				    	<div class="mqWrap">
+                <div class="marquee" id="marqueeSpot" >
+                  <p>1、在线中长期业绩创历史新高</p>       
+                  <p>2、在线中长期业绩创历史新高</p>       
+                  <p>3、在线中长期业绩创历史新高</p>           
+                </div>
+              </div>
+						</div>
+						<div class="mui-col-sm-12 mui-col-xs-12 xcf-edit">
+							<div class="me-title-2">
+				    		<span><i class="iconfont" style="color:#587CC6;margin-right: 5px;font-size: 20px;">&#xe601;</i>编辑备注</span>
+				    		<span class="xcf-edit-date">xx总裁（今日10:10）</span>
+				    	</div>
+				    	<div class="mqWrap">
+                <div id="marqueeMark" class="marquee">
+                  <p>xx业绩不如预期，有什么提请措施?2</p>           
+                  <p>xx业绩不如预期，有什么提请措施?</p>            
+                  <p>xx业绩不如预期，有什么提请措施?3</p>           
+                </div>
+              </div>
+						</div>
+					</div>
+					<div class="chart-wrapper">
+						<div class="mui-segmented-control mui-segmented-control-positive">
+							<a class="mui-control-item mui-active" href="#loadType">贷种</a>
+							<a class="mui-control-item" href="#loadAfter">贷后</a>
+							<a class="mui-control-item" href="#fqProduct">产品</a>
+						</div>
+						<div id="loadType" class="mui-control-content mui-active">
+							<div class="date-tab">
+								<div id="" class="mui-segmented-control mui-segmented-control-primary">
+									<a class="mui-control-item mui-active" href="#zxoperateDay">日</a>
+									<a class="mui-control-item" href="#zxoperateWeek">周</a>
+									<a class="mui-control-item" href="#zxoperateMoon">月</a>
+								</div>
+							</div>
+							<div id="zxoperateDay" class="mui-control-content  mui-active">
+								<div class="fqoperate-day-chart">
+									<div class="tableTitle">批核金额</div>
+									<div class="batch-fund-table fqoperate-echarts" id="batchfundTable"></div>
+								
+									<div class="tableTitle">审批通过率</div>
+									<div class="approval-pass-table fqoperate-echarts" id="approvalpassTable"></div>
+								
+									<div class="tableTitle">进单审批</div>
+									<div class="list-pass-table fqoperate-echarts" id="listpassTable"></div>
+								</div>
+							</div>
+							<div id="zxoperateWeek" class="mui-control-content">2</div>
+							<div id="zxoperateMoon" class="mui-control-content">3</div>
+							
+						</div>
+						<div id="loadAfter" class="mui-control-content">贷后</div>
+						<div id="fqProduct" class="mui-control-content">产品</div>
+					</div>
+				</div>
+			</div>
+			<div class="underline"></div>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/echarts.js"></script>
+    <script src="../js/options.js"></script>
+		<script src="../js/jquery-3.1.1.min.js"></script>
+		<script src="fq-operate.js"></script>
+	</body>
+</html>

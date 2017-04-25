@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="css/mui.picker.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/index.css"/>
+    <link rel="stylesheet" type="text/css" href="css/common.css"/>
+</head>
+<body>
+	<header id="header" class="mui-bar mui-bar-nav me-header">
+		<h1 class="mui-title">小牛分析</h1>
+	</header>
+	<button data-options='{"type":"date","beginYear":2012,"endYear":2020}' class="btn mui-btn mui-btn-block"><i class="iconfont" style="color:#587CC6;margin-right: 5px;font-size: 20px;vertical-align: -2px;">&#xe602;</i>日期选择：<span id="dtBtn"></span> <span class="mui-icon mui-icon-arrowdown"></span></button>
+	
+	<nav class="mui-bar mui-bar-tab">
+		<a class="mui-tab-item-nav" href="javascript：void(0)">
+			<span class="mui-tab-label" style="color: #007AFF;">业绩概览</span>
+		</a>
+		<a class="mui-tab-item-nav" href="operate/zx-operate.html">
+			<span class="mui-tab-label">运营详情</span>
+		</a>
+		<a class="mui-tab-item-nav" href="marketradar/public-sentiment.html">
+			<span class="mui-tab-label">市场雷达</span>
+		</a>
+	</nav>
+	<section>
+		<div class="warning">
+			<div class="warning-above">
+				<p class="warning-title"><i class="iconfont" style="color:#587CC6;margin-right: 5px;vertical-align: -2px">&#xe68e;</i>预警</p>
+				<div class="mqWrap">
+					<div id="marqueeWarn" class="marquee">
+						
+					</div>
+				</div>
+			</div>
+			<div class="warning-above">
+				<p class="warning-title"><i class="iconfont" style="color:#587CC6;margin-right: 5px;vertical-align: -2px;">&#xe65c;</i>亮点</p>
+				<div class="mqWrap">
+					<div class="marquee" id="marqueeSpot" >
+											
+					</div>
+				</div>
+			</div>
+			<div class="warning-under" id="writeComment">
+				<p class="warning-title" ><i class="iconfont" style="color:#587CC6;margin-right: 5px;font-size: 20px;">&#xe601;</i>编辑备注</p>
+				<div class="mqWrap">
+					<div id="marqueeMark" class="marquee">
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="flex">
+		<ul class="fll summary-list">
+			<li class="fwb">在线</li>
+			<li ><span id="zxPtd"></span>元</li>
+			<li>月累计：<span id="zxMtd"></span>元</li>
+			<li>年累计：<span id="zxYtd"></span>元</li>
+		</ul>
+		<ul class="fll summary-list">
+			<li class="fwb">新财富</li>
+			<li ><span id="xcfPtd"></span>元</li>
+			<li>月累计：<span id="xcfMtd"></span>元</li>
+			<li>年累计：<span id="xcfYtd"></span>元</li>
+		</ul>
+		<ul class="fll summary-list">
+			<li class="fwb">普惠</li>
+			<li ><span id="phPtd"></span>元</li>
+			<li>月累计：<span id="phMtd"></span>元</li>
+			<li>年累计：<span id="phYtd"></span>元</li>
+		</ul>
+		<ul class="fll summary-list">
+			<li class="fwb">分期</li>
+			<li ><span id="fqPtd"></span>元</li>
+			<li>月累计：<span id="fqMtd"></span>元</li>
+			<li>年累计：<span id="fqYtd"></span>元</li>
+		</ul>
+	</section>
+	<section>
+		<p class="process-title"><i class="iconfont" style="color:#587CC6;margin-right: 5px;font-size: 20px;vertical-align: -2px;">&#xe661;</i>进度分析</p>
+		<div>
+			<div id="segmentedControl" class="mui-segmented-control mui-segmented-control-inverted mui-segmented-control-primary">
+				<a class="mui-control-item mui-active" href="#item1">
+					趋势分析
+				</a>
+				<a class="mui-control-item" href="#item2">
+					详细数据
+				</a>
+			</div>
+		</div>
+		<div>
+			<div id="item1" class="mui-control-content mui-active">
+				<div class="tableTitle">月KPI达成率</div>
+				<div id="zhexian" style="height: 300px;"></div>
+			</div>
+			<div id="item2" class="mui-control-content">
+				<div>
+					<table id="table"></table>
+				</div>				
+			</div>
+		</div>
+	</section>
+	<section style="margin-bottom: 50px;">
+		<p class="process-title"><i class="iconfont" style="color:#587CC6;margin-right: 5px;font-size: 20px;vertical-align: -2px;">&#xe608;</i>业界结构与趋势<a href="generalView/zx-details.html" class="trend-detail">详情<span class="mui-icon mui-icon-arrowright"></span></a></p>
+		<div>
+			<div id="segmentedControl" class="mui-segmented-control mui-segmented-control-inverted mui-segmented-control-primary">
+				<a class="mui-control-item mui-active" href="#item3" id="zx">
+					在线
+				</a>
+				<a class="mui-control-item" href="#item4" id="xcf">
+					新财富
+				</a>
+				<a class="mui-control-item" href="#item5" id="ph">
+					普惠
+				</a>
+			</div>
+		</div>
+		<div>
+			<div id="item3" class="mui-control-content mui-active">
+				<div class="tableTitle">业绩结构</div>
+				<div id="structureZx" style="height: 300px"></div>
+
+				<div class="tableTitle">业绩趋势</div>
+				<div id="trendZx" style="height: 300px"></div>
+			</div>
+			<div id="item4" class="mui-control-content">
+				<div class="tableTitle">业绩结构</div>
+				<div id="structureXcf"></div>
+
+				<div class="tableTitle">业绩趋势</div>
+				<div id="trendXcf"></div>
+			</div>
+			<div id="item5" class="mui-control-content">
+				<div class="tableTitle">业绩结构</div>
+				<div id="structurePh" ></div>
+
+				<div class="tableTitle">业绩趋势</div>
+				<div id="trendPh"></div>				
+			</div>
+		</div>
+	</section>
+	
+	<span id="loading" class="mui-spinner" style="display: none;position: fixed;top:50%;left: 50%;"></span>
+<script src="js/mui.min.js"></script>
+<script src="js/mui.picker.min.js"></script>
+<script src="js/echarts.js"></script>
+<script src="js/options.js"></script>
+<script src="js/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+.zxtotal-column{
+	height: 280px;
+	width: 100%;
+}
+div#zx {
+    background: #f4f4f4;
+}
+.zx-column-wrapper {
+    background: #fff;
+}
+.chart-wrapper {
+    background: #fff;
+}
+.chart-wrapper .date-tab{
+    width: 320px;
+    height: 40px;
+    margin: 17px auto 32px auto;
+}
+.chart-wrapper .date-tab{
+	height: 40px;
+	line-height: 40px;
+	background: #eee;
+	text-align: center;
+	font-weight: 600;
+}
+.chart-wrapper .date-tab > div > a {
+	font-size: 16px;
+	font-weight: 50;
+	color: #444;
+};
+.chart-wrapper .date-tab .active{
+	background: #587CC6 ;
+	color: #fff;
+}
+.zxoperate-day-chart .year-ratio-table,.zxoperate-day-chart .back-fund-table,.zxoperate-day-chart .wait-back-table,#zxoperateMoon .wait-back-table {
+	height: 280px;
+	width: 100%;
+}
+
+div#fq {
+    background: #f4f4f4;
+}
+.fqoperate-day-chart .fqoperate-echarts{
+	height: 280px;
+	width: 100%;
+}
+.fq-list-total{
+	display: flex;
+	height: 228px;
+	background: #fff;
+	padding: 10px 0;
+}
+.fq-list-itleft{
+	flex: 1;
+}
+.fq-list-itmid{
+	flex: 0 0 10px;
+}
+.fq-list-itright{
+	flex: 1;
+	margin-left: 20px;
+}
+ul.fq-list-ul {
+    padding: 0;
+}
+.fq-list-ul .fq-list-li{
+	list-style: none;
+    padding: 10px 8px;
+    margin: 0;
+}
+.fq-list-ul .fq-list-li > span:last-child{
+	color: #587CC6;
+	margin-left: 5px;
+	float: right;
+}
+.fq-list-itmid{
+	margin: 10px 0;
+}
+.fq-list-itmid .roll{
+    padding: 2px;
+    background: #587CC6;
+    display: block;
+    border: 5px solid #587cc6;
+    border-radius: 50%;
+}
+.fq-list-itmid .line{
+    height: 158px;
+    background: #ccc;
+    width: 1px;
+    margin-left: 6px;
+}
+
+.zx-details-content{
+	background: #fff;
+}

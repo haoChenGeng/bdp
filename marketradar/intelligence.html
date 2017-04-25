@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link href="../css/common.css" rel="stylesheet" />
+		<link href="../css/marketradar.css" rel="stylesheet" />
+		
+	</head>
+
+	<body>
+		<header id="header" class="mui-bar mui-bar-nav me-header">
+			<h1 class="mui-title">小牛分析</h1>
+			<button class="mui-action-back  mui-btn-link ">
+				<span class="mui-icon mui-icon-left-nav"></span>返回
+			</button>
+		</header>
+		<nav class="mui-bar mui-bar-tab">
+			<a class="mui-tab-item-nav" href="../index.html">
+				<span class="mui-tab-label">业绩概览</span>
+			</a>
+			<a class="mui-tab-item-nav" href="../operate/zx-operate.html">
+				<span class="mui-tab-label">运营详情</span>
+			</a>
+			<a class="mui-tab-item-nav" href="javascript：void(0)">
+				<span class="mui-tab-label" style="color: #007AFF;">市场雷达</span>
+			</a>
+		</nav>
+		<div class="mui-content">
+			<div class="a-tab-graffer">
+				<a class="a-tab-item" href="public-sentiment.html">舆情</a>
+				<a class="a-tab-item" href="record.html">数据</a>
+				<a class="a-tab-item active" href="javascript:void(0)">情报</a>
+				<a class="a-tab-item" href="research-report.html">研报</a>
+			</div>
+			<div class="mui-control-content mui-active">
+				<ul class="mui-table-view gen-list" id="genlist">
+				
+				</ul>
+			</div>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/options.js"></script>
+		<script src="intelligence.js"></script>
+		<script type="text/javascript">
+			mui.init();
+		</script>
+	</body>
+
+</html>
